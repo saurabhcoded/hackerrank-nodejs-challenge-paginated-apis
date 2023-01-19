@@ -1,8 +1,8 @@
 var recipes = require('../recipes.json');
 var router = require('express').Router();
 
-router.get("/recipes",(req,res)=>{
-  console.log("req,res")
+router.get("/", function(req, res, next) {
+  res.send('<p>HTML Data</p>');
 })
 
 module.exports = router;
