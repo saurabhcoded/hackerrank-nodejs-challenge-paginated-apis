@@ -16,10 +16,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', indexRouter);
-app.get('/book', (req, res, next) => {
-  console.log("Hello Recipe")
-  res.send("Recipe")
-});
+app.use('/', indexRouter);
+app.use('/recipes', recipeRouter);
+
 
 module.exports = app;
